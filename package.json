@@ -4,14 +4,24 @@
   "description": "Odin Project restaurant page with use of webpack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack serve --open"
   },
   "keywords": [],
   "author": "KV-Vel",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-loader": "^5.0.0",
+    "html-webpack-inline-svg-plugin": "^2.3.0",
     "html-webpack-plugin": "^5.6.0",
+    "style-loader": "^4.0.0",
     "webpack": "^5.92.1",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }

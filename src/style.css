@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --header-background: #121214;
+    --main-color: #c89f40;
+    --shadow-color: #b35b00;
+    --footer-color: #999999;
+    --responsive-font: clamp(1.2rem, 1.8vw, 1.8rem);
+}
+
+body {
+    font-family: "Teko", sans-serif;
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color:var(--shadow-color);
+  }
+/*NAVBAR*/
+
+header {
+    background-color: var(--header-background);
+}
+
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    /* max-width: 1400px; */
+    margin: 0px auto;
+    padding: 0px 13vw;
+}
+
+button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.nav-btn {
+    color:  var(--main-color);
+    font-size: 1.5rem;
+    min-height: 79px;
+    min-width: 80px;
+}
+
+.nav-btn:hover {
+    color: var(--header-background);
+    background-color: var(--main-color);
+    box-shadow: 0px 5px 0px 3px var(--header-background);
+}
+
+.restaurant-name-header {
+    color: var(--main-color);
+    margin: 12px;
+}
+
+.hot-dog-icon {
+    vertical-align: bottom;
+}
+
+/*ABOUT*/
+
+.our-story-container,
+.call-to-menu {
+    background-color: var(--main-color);
+}
+
+.our-team-container {
+    background-color: #f0f1f0;
+}
+
+.our-story-container,
+.our-team-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  /* max-width: 1400px; */
+
+  margin: 0px auto;
+  padding: 50px 13vw;
+  gap: 65px;
+}
+
+.first-hotdog-van,
+.hot-dog-making {
+    border-radius: 25px;
+    transition: 0.5s ease;
+    filter:sepia(80%);
+    box-shadow: 2px 2px 15px 3px rgba(0,0,0,0.5);
+    max-width: 100%;
+    height: auto;
+}
+
+.first-hotdog-van:hover,
+.hot-dog-making:hover {
+    transform: scale(105%);
+    filter:sepia(30%);
+    box-shadow: 10px 13px 23px 3px rgb(66, 66, 66);
+    
+}
+
+.our-story-article,
+.our-team-article {
+    font-size: var(--responsive-font);
+}
+
+.our-story-article {
+    color: var(--header-background);
+}
+
+.our-team-article {
+    color: var(--main-color);
+}
+
+h2 {
+    text-shadow: 1px 5px 1px var(--shadow-color);
+}
+
+p{
+    font-style: italic;
+    text-align: justify;
+    padding: 5px;
+}
+
+
+.img-holder {
+    background-image: url(./images/333.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 170px 0;
+}
+
+.call-to-menu-btn {
+    /* min-width: 150px; */
+    width: 150px;
+    padding-bottom: 15px;
+    
+    font-size: 24px;
+    font-weight: 400;
+    color:aliceblue;
+    border-bottom: 3px solid aliceblue;
+    position: relative;
+    transition: 0.5s;
+}
+
+.call-to-menu-btn:hover {
+    padding-right: 25px;
+}
+
+
+.call-to-menu-btn::after {
+    content: '➔';
+    position: absolute;
+    top: 15;
+    right: 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.call-to-menu-btn:hover::after {
+    opacity: 1;
+    padding-right: 15px;
+}
+
+/*FOOTER*/
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    align-items: start;
+    /* justify-items: stretch; */
+
+    margin: 0px auto;
+    padding: 45px 13vw;
+    font-family: "Quicksand", sans-serif;
+    font-size: 0.8rem;
+    background-color: var(--header-background);
+    color: var(--footer-color);
+    /* gap: 65px; */
+    gap: 24px;
+}
+
+.contacts-container,
+.working-hours-container {
+    border-right: 3px solid var(--footer-color);
+    border-radius: 3px;
+}
+
+.author-info-container {
+    grid-column: 1/4;
+}
+
+.author-info-container > p {
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+h3 {
+    padding-bottom: 12px;
+}
+
+/*Еще переменные
+Поправить css. Взять квадратную картинку? ПОпробовать дать тот же класс
+Что делает flex-basis
+когда мышь попадает на желтый контейнер сделать картинку цветной?? Вроде звучит круто
+сделать текст шадоу больше (как будто тень текст выходит за границы и становится 2 слова также при наведении мыши??
+Посчитать количество слов в тексте our food и сделать lorem ipsum?
+::focus-within для contact us?
+в contact us сделать checkbox получать уведомления и дать ему цвет с помощтб accent:color 
+https://www.youtube.com/watch?v=opHu7HvFM60 - досмотреть с 15 24
+
+сделать как то узор на checkout our menu 
+или сделать стрелку при хувере на которую она будет передвигаться чуть чуть вправо и тоже будет напдисаь Checkout menu
+*/
