@@ -75,8 +75,9 @@ export function createFooter() {
         className: 'author-info-container'
     });
 
-    const authorSignature = createEl('p', {
-        textContent: 'Made by KV-Vel'
+    const authorSignature = createEl('a', {
+        textContent: 'Made by KV-Vel',
+        href: 'https://github.com/KV-Vel'
     });
 
     footerAuthorInfoContainer.append(authorSignature);
@@ -115,7 +116,7 @@ export function renderAboutSection () {
 
     const storyParagraph = createEl('p', {
         className: 'our-story-paragraph',
-        textContent: 'No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?'
+        textContent: 'No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.'
     });
     storyArticle.append(storyHeader2, storyParagraph);
     
@@ -174,16 +175,12 @@ export function renderAboutSection () {
     imgHolder.append(makeOrderBtn);
 
     callToMenu.append(imgHolder)
-    // footer.append(footerContactsContainer, footerWorkingHours, footerAddressContainer, footerAuthorInfoContainer);
 
     // Appending all elements
     fragment.append(storyContainer, teamContainer, callToMenu );
     
     contentDiv.append(fragment);
 
-    createFooter();
 };
 
-
-//PUSH TO GIT! BUT DONT PUSH ABOUT JS
 // semantically adjust email address for HTML and what about PHone?
