@@ -70,6 +70,7 @@ h1 {
 .hot-dog-icon {
     vertical-align: bottom;
 }
+/*NAVBAR END*/
 
 /*ABOUT*/
 
@@ -171,6 +172,7 @@ p{
     opacity: 1;
     padding-right: 15px;
 }
+/*ABOUT END*/
 
 /*FOOTER*/
 footer {
@@ -216,12 +218,9 @@ footer {
 h3 {
     padding-bottom: 12px;
 }
+/*FOOTER END*/
 
-
-/*MAIN PAGE*/
-
-
-
+/*HOME PAGE*/
 .welcoming {
     display: flex;
   justify-content: center;
@@ -329,6 +328,122 @@ h3 {
     background-color: var(--main-color);
     color: aliceblue;
 }
+
+/*HOMEPAGE END*/
+
+/*CONTACT US PAGE*/
+
+.contact-form-header-group {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-form-header-group > p,
+.form-group > button{
+    font-size: 1.5rem;
+}
+
+.contact-form-header {
+    text-shadow: 1px 5px 1px var(--shadow-color);
+    color: var(--header-background);
+}
+
+.form-group > button {
+    color: var(--shadow-color);
+    border: 2px solid var(--shadow-color);
+    padding: 15px 0;
+}
+
+.form-group > button:hover {
+    background-color: var(--shadow-color);
+    color: var(--header-background);
+}
+
+
+form:focus-within {
+    color: var(--shadow-color);
+}
+
+.form-wrapper{ 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+    background-color: var(--main-color);
+    font-size: 1.2rem;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+form {
+    width: 55%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    background-color: var(--header-background);
+    padding: 50px 70px;
+    border-radius: 10px;
+    color: aliceblue;
+    transition: 0.4s;
+}
+
+.form-group {
+    display: grid;
+    gap: 0.5rem;
+    
+} 
+
+.--full-width {
+    grid-column: 1 / -1;
+}
+
+input,
+select {
+    height: 45px;
+    border: none;
+}
+
+input, 
+textarea,
+select {
+    border-radius: 1px;
+    border-bottom: 3px solid var(--shadow-color);
+    padding: 0 15px;
+}
+
+input:focus-visible, 
+textarea:focus-visible {
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+.footnote {
+    color: var(--main-color);
+    font-size: 1rem;
+}
+
+.news-checkbox-container {
+    display: flex;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--shadow-color);
+    margin-right: 20px;
+}
+
+@media (max-width: 1000px) {
+    form {
+        width: 95%;
+        grid-template-columns: 1fr;
+    }
+}
+/*CONTACT US PAGE END*/
 
 /*Еще переменные
 Что делает flex-basis
