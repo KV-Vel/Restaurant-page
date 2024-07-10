@@ -1,4 +1,4 @@
-import { createEl, createFooter } from "./about";
+import { createEl } from "./about";
 
 export function renderHomePage() {
     const fragment = document.createDocumentFragment();
@@ -9,7 +9,7 @@ export function renderHomePage() {
         className: 'parallax-wrapper'
     });
 
-    // WELCOMINH CONTAINER
+    // WELCOMING CONTAINER
     const welcomingSection = createEl('section', {
         className:'welcoming'
     });
