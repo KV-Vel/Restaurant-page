@@ -182,5 +182,3 @@ export function renderAboutSection () {
     contentDiv.append(fragment);
 
 };
-
-// semantically adjust email address for HTML and what about PHone?
