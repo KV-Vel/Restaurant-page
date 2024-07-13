@@ -70,6 +70,18 @@ h1 {
 .hot-dog-icon {
     vertical-align: bottom;
 }
+
+nav button:focus-within {
+    background-color: var(--main-color);
+    color: var(--header-background);
+}
+
+.active {
+    background-color: var(--main-color);
+    color: var(--header-background); 
+}
+
+
 /*NAVBAR END*/
 
 /*ABOUT*/
@@ -444,6 +456,100 @@ input[type="checkbox"] {
     }
 }
 /*CONTACT US PAGE END*/
+
+/*MENU*/
+
+.menu-wrapper {
+    /* height: 100vh; */
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+}
+
+.menu-wrapper > h2 {
+    text-align: center;
+    padding: 40px 0;
+    /* margin: 0 24vw 35px 24vw; */
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    margin: 0 24vw 35px 24vw;
+    row-gap: 25px;
+    column-gap: 25px;
+    
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* width: 390px; */
+    height: 300px;
+    
+    column-gap: 20px;
+    padding-left: 20px;
+    align-items: center;
+    border: 2px solid var(--header-background);
+    box-shadow: 5px 8px 0px 1px var(--header-background);
+    border-radius: 10px;
+}
+
+.item > img {
+    transition: 0.5s;
+    justify-self: center;
+}
+
+.item > img:hover {
+    transform: scale(105%);
+}
+
+.item-description-wrapper {
+    font-family: 'Quicksand';
+    font-size: 0.8rem;
+    font-weight: 900;
+    /* padding: 20 10px; */
+    color: var(--header-background);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+.item-description-wrapper span {
+    
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: var(--header-background);
+    color: white;
+    border-radius: 25px;
+    padding: 5px;
+    align-self: flex-start;
+    transform: translateX(-30px) rotate(15deg);
+}
+
+.item-description-wrapper p {
+    padding: 10px 30px;
+    font-style: normal;
+    margin-bottom: 5px;
+    font-size: 18px;
+    /* clip-path: circle(50%); */
+    background-color: #b35b00;
+    border-radius: 55px;
+}
+
+.menu-item-img {
+    height: auto;
+    max-height: 200px;
+    width: 200px;
+    max-width: 100%;
+    align-self: center;
+}
 
 /*Еще переменные
 Что делает flex-basis
