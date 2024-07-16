@@ -571,6 +571,10 @@ input[type="checkbox"] {
     .img-holder {
         height: 25vh;
     }
+
+    .img-container {
+        order: 1;
+    }
 }
     @media(max-width: 400px) {
     .menu {
