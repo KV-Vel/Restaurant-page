@@ -1,4 +1,6 @@
 import { createEl } from "./about";
+import { renderMenu } from "./menu";
+import { navButtons } from "../index";
 
 export function renderHomePage() {
     const fragment = document.createDocumentFragment();
@@ -11,7 +13,7 @@ export function renderHomePage() {
 
     // WELCOMING CONTAINER
     const welcomingSection = createEl('section', {
-        className:'welcoming'
+        className: 'welcoming'
     });
 
     const welcomingWrapper = createEl('div');
@@ -30,7 +32,15 @@ export function renderHomePage() {
 
     const welcomingButton = createEl('button', {
         textContent: 'Menu',
-        type: 'button'
+        type: 'button',
+        onclick: function() {
+            contentDiv.innerHTML = '';
+            renderMenu();
+            //HOME
+            navButtons[0].classList.remove('active');
+            //MENU
+            navButtons[1].classList.add('active');
+        }
     });
 
     welcomingButtonContainer.append(welcomingButton);
@@ -39,7 +49,6 @@ export function renderHomePage() {
 
     //BENEFITS
 
-    
     const benefitsSection = createEl('section', {
         className: 'benefits'
     });
@@ -64,7 +73,7 @@ export function renderHomePage() {
     benefitsContainer1.append(benefitHeader2, benefitParagraph, benefitParagraphNote);
 
     //section 2
-    const benefitsContainer2 = createEl('div',{
+    const benefitsContainer2 = createEl('div', {
         className: 'benefit'
     });
 
@@ -78,12 +87,12 @@ export function renderHomePage() {
     benefitsContainer2.append(benefitsContainer2Header2, benefitsContainer2Paragraph);
 
     //section 3
-    const benefitsContainer3 = createEl('div',{
-            className: 'benefit'
-        });
+    const benefitsContainer3 = createEl('div', {
+        className: 'benefit'
+    });
 
     const benefitsContainer3Header2 = createEl('h2', {
-         textContent: 'Reward Programm'
+        textContent: 'Reward Programm'
     });
 
     const benefitsContainer3Paragraph = createEl('p', {
@@ -104,7 +113,7 @@ export function renderHomePage() {
     benefitsContainer3.append(benefitsContainer3Header2, benefitsContainer3Paragraph, orderedList);
 
     benefitsSection.append(benefitsContainer1, benefitsContainer2, benefitsContainer3);
-    
+
     //SUBSCRIPTION
     const subscriptionSection = createEl('section');
 

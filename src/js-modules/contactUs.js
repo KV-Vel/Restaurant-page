@@ -4,12 +4,11 @@ export function renderContactUs() {
     const fragment = document.createDocumentFragment();
     const contentDiv = document.querySelector('#content');
 
-
     /* Wrapper */
     const formWrapper = createEl('div', {
         className: 'form-wrapper'
     });
-    
+
     const headerGroup = createEl('div', {
         className: 'contact-form-header-group'
     });
@@ -130,7 +129,7 @@ export function renderContactUs() {
         id: 'message',
         rows: 5
     });
-    
+
     formGroup5.append(labelGroup5, textArea);
 
     //6 group
@@ -160,7 +159,7 @@ export function renderContactUs() {
     const newsCheckBox = createEl('input', {
         id: 'receive-news-checkbox',
         type: 'checkbox'
-    }); 
+    });
 
     const labelCheckBox = createEl('label', {
         for: 'receive-news-checkbox',
@@ -171,9 +170,9 @@ export function renderContactUs() {
 
     form.append(formGroup1, formGroup2, formGroup3, formGroup4, formGroup5, formGroup6, footnote, newsCheckBoxContainer);
     /* Form */
-    
+
     formWrapper.append(headerGroup, form);
     fragment.append(formWrapper);
-    
+
     contentDiv.append(fragment);
 }

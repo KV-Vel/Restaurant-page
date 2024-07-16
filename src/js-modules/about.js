@@ -1,7 +1,7 @@
-import firstVanImg from './images/first-hotdog-van.jpg';
-import chefsPhoto from './images/making-hot-dog.jpg';
+import firstVanImg from '../images/first-hotdog-van.jpg';
+import chefsPhoto from '../images/making-hot-dog.jpg';
 
-export function createEl (tag, options) {
+export function createEl(tag, options) {
     const el = document.createElement(tag);
 
     for (let key in options) {
@@ -13,7 +13,7 @@ export function createEl (tag, options) {
 
 export function createFooter() {
     const body = document.querySelector('body');
-    
+
     // footer
     const footer = createEl('footer');
 
@@ -87,7 +87,7 @@ export function createFooter() {
     body.append(footer);
 }
 
-export function renderAboutSection () {
+export function renderAboutSection() {
     const fragment = document.createDocumentFragment();
     const contentDiv = document.querySelector('#content');
     // Story container
@@ -101,14 +101,14 @@ export function renderAboutSection () {
 
     const imagefirstHotDogVan = createEl('img', {
         alt: 'first-hotdog-van',
-        className : 'first-hotdog-van',
+        className: 'first-hotdog-van',
         src: firstVanImg
     });
 
     const storyArticle = createEl('article', {
         className: 'our-story-article'
     });
-    
+
     const storyHeader2 = createEl('h2', {
         className: 'our-story-header',
         textContent: 'Our story'
@@ -119,7 +119,7 @@ export function renderAboutSection () {
         textContent: 'No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.'
     });
     storyArticle.append(storyHeader2, storyParagraph);
-    
+
     storyContainer.append(storyImgContainer, storyArticle);
     storyImgContainer.append(imagefirstHotDogVan);
 
@@ -177,8 +177,7 @@ export function renderAboutSection () {
     callToMenu.append(imgHolder)
 
     // Appending all elements
-    fragment.append(storyContainer, teamContainer, callToMenu );
-    
-    contentDiv.append(fragment);
+    fragment.append(storyContainer, teamContainer, callToMenu);
 
+    contentDiv.append(fragment);
 };

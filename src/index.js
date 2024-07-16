@@ -1,51 +1,43 @@
 import 'normalize.css';
 import './style.css';
-import {renderAboutSection, createFooter} from './about.js';
-import {renderHomePage} from './homepage.js';
-import { renderContactUs } from './contactUs.js';
-import { renderMenu } from './menu.js';
+import { renderAboutSection, createFooter } from './js-modules/about.js';
+import { renderHomePage } from './js-modules/homepage.js';
+import { renderContactUs } from './js-modules/contactUs.js';
+import { renderMenu } from './js-modules/menu.js';
 
+const navigationBar = document.querySelector('nav');
 const content = document.querySelector('#content');
-const [home, menu, about, contact] = document.querySelectorAll('.nav-btn');
-let isDefaultStyleRemoved = false;
+export const [...navButtons] = document.querySelectorAll('.nav-btn');
 
-(function initCreatePage() {
+(function initCreatePage(homepageButton) {
     renderHomePage();
     createFooter();
-    home.classList.add('active');
-})();
 
-home.addEventListener('click', () => {
+    homepageButton.classList.add('active');
+})(navButtons[0]);
+
+function handleTabs(e) {
+    navButtons.find(btn => btn.classList.contains('active'))
+              .classList.remove('active');
+
+    e.target.classList.add('active');
+
     content.innerHTML = '';
-    renderHomePage();
-}); 
 
-about.addEventListener('click', () => {
-    content.innerHTML = '';
-    renderAboutSection();
-
-    if (!isDefaultStyleRemoved) {
-        home.classList.remove('active');
-        isDefaultStyleRemoved = true;
+    switch (e.target.textContent) {
+        case 'About':
+            renderAboutSection();
+            break;
+        case 'Home':
+            renderHomePage();
+            break;
+        case 'Menu':
+            renderMenu();
+            break;
+        case 'Contact':
+            renderContactUs();
+            break;
     }
-});
+}
 
-contact.addEventListener('click', () => {
-    content.innerHTML = '';
-    renderContactUs();
-
-    if (!isDefaultStyleRemoved) {
-        home.classList.remove('active');
-        isDefaultStyleRemoved = true;
-    }    
-});
-
-menu.addEventListener('click', () => {
-    content.innerHTML = '';
-    renderMenu();
-    
-    if (!isDefaultStyleRemoved) {
-        home.classList.remove('active');
-        isDefaultStyleRemoved = true;
-    }
-});
+navigationBar.addEventListener('click', handleTabs);

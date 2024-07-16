@@ -1,10 +1,10 @@
 import {createEl} from './about';
-import italianHotDog from './images/italian.png';
-import classicHotDog from './images/classic.png';
-import gravyHotDog from './images/gravy3.png';
-import americanHotDog from './images/american2.png';
-import relishHotDog from './images/relish.png';
-import chicagoHotDog from './images/chicago2.png';
+import italianHotDog from '../images/italian.png';
+import classicHotDog from '../images/classic.png';
+import gravyHotDog from '../images/gravy3.png';
+import americanHotDog from '../images/american2.png';
+import relishHotDog from '../images/relish.png';
+import chicagoHotDog from '../images/chicago2.png';
 
 export function renderMenu() {
     const fragment = document.createDocumentFragment();
@@ -185,4 +185,3 @@ export function renderMenu() {
     fragment.append(menuWrapper);
     contentDiv.append(fragment);
 }
-

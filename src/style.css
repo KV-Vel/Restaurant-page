@@ -8,9 +8,9 @@
 }
 
 :root {
-    --header-background: #121214;
+    --secondary-color: #121214;
     --main-color: #c89f40;
-    --shadow-color: #b35b00;
+    --additional-color: #b35b00;
     --footer-color: #999999;
     --responsive-font: clamp(1.2rem, 1.8vw, 1.8rem);
 }
@@ -21,13 +21,13 @@ body {
 }
 
 ::selection {
-    background-color:var(--shadow-color);
+    background-color:var(--additional-color);
   }
 
 /*NAVBAR*/
 header,
 .our-team-container {
-    background-color: var(--header-background);
+    background-color: var(--secondary-color);
 }
 
 .wrap {
@@ -35,9 +35,8 @@ header,
     align-items: center;
     justify-content: space-between;
 
-    margin: 0px auto;
     padding: 0px 13vw;
-    
+    position: relative;
 }
 
 button {
@@ -50,15 +49,15 @@ button {
 }
 
 .nav-btn {
+    min-height: 79px;
+    min-width: 70px;
+
     color:  var(--main-color);
     font-size: 1.5rem;
-
-    min-height: 79px;
-    min-width: 80px;
 }
 
 .nav-btn:hover {
-    color: var(--header-background);
+    color: var(--secondary-color);
     background-color: var(--main-color);
 }
 
@@ -71,21 +70,14 @@ h1 {
     vertical-align: bottom;
 }
 
-nav button:focus-within {
-    background-color: var(--main-color);
-    color: var(--header-background);
-}
-
 .active {
     background-color: var(--main-color);
-    color: var(--header-background); 
+    color: var(--secondary-color); 
 }
-
 
 /*NAVBAR END*/
 
 /*ABOUT*/
-
 .our-story-container {
     background-color: var(--main-color);
 }
@@ -102,12 +94,13 @@ nav button:focus-within {
 
 .first-hotdog-van,
 .hot-dog-making {
+    max-width: 100%;
+    height: auto;
+
     border-radius: 25px;
     transition: 0.5s ease;
     filter:grayscale(70%);
     box-shadow: 2px 2px 15px 3px rgba(0,0,0,0.5);
-    max-width: 100%;
-    height: auto;
 }
 
 .first-hotdog-van:hover,
@@ -115,7 +108,6 @@ nav button:focus-within {
     transform: scale(105%);
     filter:sepia(30%);
     box-shadow: 10px 13px 23px 3px rgb(66, 66, 66);
-    
 }
 
 .our-story-article,
@@ -124,7 +116,7 @@ nav button:focus-within {
 }
 
 .our-story-article {
-    color: var(--header-background);
+    color: var(--secondary-color);
 }
 
 .our-team-article {
@@ -132,36 +124,37 @@ nav button:focus-within {
 }
 
 h2 {
-    text-shadow: 1px 5px 1px var(--shadow-color);
+    text-shadow: 1px 5px 1px var(--additional-color);
 }
 
-p{
+p {
     font-style: italic;
     text-align: justify;
     padding: 5px;
 }
 
 .img-holder {
-    background-image: url(./images/333.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-image: url(./images/333.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 
     height: calc(20vw - 15px);
 }
 
 .call-to-menu-btn {
-    /* min-width: 150px; */
     width: 150px;
     padding-bottom: 15px;
     
     font-size: 24px;
     font-weight: 400;
     color:aliceblue;
+
     border-bottom: 3px solid aliceblue;
+
     position: relative;
     transition: 0.5s;
 }
@@ -169,7 +162,6 @@ p{
 .call-to-menu-btn:hover {
     padding-right: 25px;
 }
-
 
 .call-to-menu-btn::after {
     content: '➔';
@@ -188,19 +180,18 @@ p{
 
 /*FOOTER*/
 footer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* grid-template-rows: 100px;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+    display: grid;  
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     align-items: start;
-    
-    margin: 0px auto;
+    gap: 24px;
+ 
     padding: 45px 13vw;
+
     font-family: "Quicksand", sans-serif;
     font-size: 0.8rem;
-    background-color: var(--header-background);
+
+    background-color: var(--secondary-color);
     color: var(--footer-color);
-    gap: 24px;
     filter: sepia(50%);
 }
 
@@ -211,7 +202,7 @@ footer {
 }
 
 .author-info-container {
-    grid-column: 1/4;
+    grid-column: 1 / 4;
     text-align: center;
 }
 
@@ -234,9 +225,10 @@ h3 {
 
 /*HOME PAGE*/
 .welcoming {
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
+
   font-size: 1.5rem;
   padding: 85px 25vw;
 }
@@ -248,14 +240,9 @@ h3 {
     background-position: center center;
     background-attachment: fixed;
     background-image: url(./images/main.webp);
-}
-
-.background-main-page {
-    object-fit: cover;
-    display: block;
-    
-    filter:brightness(0.6);
-    max-width: 100vw;
+    background-size:cover;
+    background-repeat: no-repeat;
+    width: 100%;
 }
 
 .buttons-container {
@@ -264,18 +251,17 @@ h3 {
 }
 
 .buttons-container > button {
-    border-bottom: 4px solid var(--main-color);
-    
     min-width: 100px;
-    color: var(--header-background);
-    text-decoration: wavy;
     margin-top: 10px;
+    padding: 10px 10px 5px 10px;
+
+    border-bottom: 4px solid var(--main-color);
     border-radius: 2px;
+
     font-size: 1.5rem;
     text-transform:uppercase;
     font-weight: 500;
-    
-    padding: 10px 10px 5px 10px;
+    color: var(--secondary-color);
 }
 
 .buttons-container > button:hover {
@@ -288,7 +274,7 @@ h3 {
   
     padding: 85px 13vw;
     gap: 20px;
-    background-color: var(--header-background);
+    background-color: var(--secondary-color);
 }
 
 .benefit {
@@ -296,7 +282,6 @@ h3 {
     border-radius: 10px;
     padding: 25px 1.5em;
     font-size: clamp(1.1rem, 1.5vw, 1.4rem);
-    
 }
 
 .benefit > * {
@@ -305,7 +290,7 @@ h3 {
 
 .benefit > p + p {
     padding: 0;
-    background-color: var(--shadow-color);
+    background-color: var(--additional-color);
 }
 
 /*SUBSCRIPTION*/
@@ -318,9 +303,10 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* flex-wrap: wrap; */
-    border-top: 2px solid var(--header-background);
-    border-bottom: 2px solid var(--header-background);
+    gap: 25px;
+
+    border-top: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
     padding: 30px 0;
    
     font-family: 'Quicksand';
@@ -329,11 +315,11 @@ h3 {
 }
 
 .borders-container > button {
-    border: 2px solid var(--main-color);
     padding: 12px 40px;
-    transition: 0.3s;
     min-width: 230px;
-    margin-left: 25px;
+
+    border: 2px solid var(--main-color);
+    transition: 0.3s;
 }
 
 .borders-container > button:hover {
@@ -344,7 +330,6 @@ h3 {
 /*HOMEPAGE END*/
 
 /*CONTACT US PAGE*/
-
 .contact-form-header-group {
     text-align: center;
     margin-bottom: 30px;
@@ -356,24 +341,23 @@ h3 {
 }
 
 .contact-form-header {
-    text-shadow: 1px 5px 1px var(--shadow-color);
-    color: var(--header-background);
+    text-shadow: 1px 5px 1px var(--additional-color);
+    color: var(--secondary-color);
 }
 
 .form-group > button {
-    color: var(--shadow-color);
-    border: 2px solid var(--shadow-color);
+    color: var(--additional-color);
+    border: 2px solid var(--additional-color);
     padding: 15px 0;
 }
 
 .form-group > button:hover {
-    background-color: var(--shadow-color);
-    color: var(--header-background);
+    background-color: var(--additional-color);
+    color: var(--secondary-color);
 }
 
-
 form:focus-within {
-    color: var(--shadow-color);
+    color: var(--additional-color);
 }
 
 .form-wrapper{ 
@@ -382,19 +366,22 @@ form:focus-within {
     flex-direction: column;
     align-items: center;
     
-    background-color: var(--main-color);
-    font-size: 1.2rem;
     padding-top: 30px;
     padding-bottom: 30px;
+
+    background-color: var(--main-color);
+    font-size: 1.2rem;
 }
 
 form {
-    width: 55%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-    background-color: var(--header-background);
+
+    width: 55%;
     padding: 50px 70px;
+
+    background-color: var(--secondary-color);
     border-radius: 10px;
     color: aliceblue;
     transition: 0.4s;
@@ -403,7 +390,6 @@ form {
 .form-group {
     display: grid;
     gap: 0.5rem;
-    
 } 
 
 .--full-width {
@@ -420,7 +406,7 @@ input,
 textarea,
 select {
     border-radius: 1px;
-    border-bottom: 3px solid var(--shadow-color);
+    border-bottom: 3px solid var(--additional-color);
     padding: 0 15px;
 }
 
@@ -445,7 +431,7 @@ textarea {
 input[type="checkbox"] {
     width: 20px;
     height: 20px;
-    accent-color: var(--shadow-color);
+    accent-color: var(--additional-color);
     margin-right: 20px;
 }
 
@@ -458,42 +444,36 @@ input[type="checkbox"] {
 /*CONTACT US PAGE END*/
 
 /*MENU*/
-
 .menu-wrapper {
-    /* height: 100vh; */
     background-color: var(--main-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
-  
 }
 
 .menu-wrapper > h2 {
     text-align: center;
-    padding: 40px 0;
-    /* margin: 0 24vw 35px 24vw; */
+    padding-top: 40px;
 }
 
 .menu {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    margin: 0 24vw 35px 24vw;
-    row-gap: 25px;
-    column-gap: 25px;
-    
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 85px 24vw;
 }
 
 .item {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* width: 390px; */
-    height: 300px;
-    
-    column-gap: 20px;
-    padding-left: 20px;
     align-items: center;
-    border: 2px solid var(--header-background);
-    box-shadow: 5px 8px 0px 1px var(--header-background);
+    column-gap: 20px;
+
+    height: 300px;
+    padding-left: 20px;
+
+    border: 2px solid var(--secondary-color);
+    box-shadow: 5px 8px 0px 1px var(--secondary-color);
     border-radius: 10px;
 }
 
@@ -507,38 +487,37 @@ input[type="checkbox"] {
 }
 
 .item-description-wrapper {
-    font-family: 'Quicksand';
-    font-size: 0.8rem;
-    font-weight: 900;
-    /* padding: 20 10px; */
-    color: var(--header-background);
-
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
+    font-family: 'Quicksand';
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: var(--secondary-color);
 }
 
-
-
 .item-description-wrapper span {
-    
-    font-size: 1rem;
-    font-weight: 700;
-    background-color: var(--header-background);
-    color: white;
-    border-radius: 25px;
     padding: 5px;
     align-self: flex-start;
+
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 25px;
+
+    font-size: 1rem;
+    font-weight: 700;
+
     transform: translateX(-30px) rotate(15deg);
 }
 
 .item-description-wrapper p {
     padding: 10px 30px;
-    font-style: normal;
     margin-bottom: 5px;
+
+    font-style: normal;
     font-size: 18px;
-    /* clip-path: circle(50%); */
+
     background-color: #b35b00;
     border-radius: 55px;
 }
@@ -551,11 +530,68 @@ input[type="checkbox"] {
     align-self: center;
 }
 
-/*Еще переменные
-Что делает flex-basis
-::focus-within для contact us?
-в contact us сделать checkbox получать уведомления и дать ему цвет с помощтб accent:color 
-можно ли #content сделать глобальной переменной?
-ADD event listener to MENU button on homepage
-FONT loading time?
-*/
+/*MEDIA FOR WHOLE SITE*/
+@media (max-width: 850px) {
+    .wrap {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .welcoming, 
+    .benefits,
+    .subscription-message-container,
+    .menu {
+        padding: 85px 3vw;
+    }
+
+    .benefits,
+    footer,
+    .our-team-container,
+    .our-story-container {
+        grid-template-columns:auto;
+    }
+
+    .our-team-container,
+    .our-story-container {
+        gap: 15px;
+    }
+    .borders-container {
+        flex-direction: column;
+    }
+    
+    .author-info-container {
+        grid-column: auto;
+    }
+
+    .contacts-container,
+    .working-hours-container {
+        border-right: none;
+    }
+
+    .img-holder {
+        height: 25vh;
+    }
+}
+    @media(max-width: 400px) {
+    .menu {
+        padding: 85px 1vw;
+    }
+    
+    .item {
+        grid-template-columns:auto;
+        padding-left: 0;
+    }
+    .item-description-wrapper {
+        margin-left: 30px;
+    }
+    
+    form {
+        padding: 50px 20px;
+    }
+}
+
+/*Push to git
+Check images (give links to them) and make some aware that you don't owe them AND not using for commercial
+DO production bundle?
+https://www.youtube.com/watch?v=TTOkgUNmNk0&list=PL07efmqYWHZ_cxA1GvuXQMA-VYk8dhuiv&index=5 
+25: 22*/
